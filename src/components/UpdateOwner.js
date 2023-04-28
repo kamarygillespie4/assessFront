@@ -88,7 +88,7 @@ const UpdateOwner = () => {
     console.log(entityType);
     console.log(ownerType);
     console.log(address);
-
+    location.reload();
     const formData = {
       name,
       entityType,
