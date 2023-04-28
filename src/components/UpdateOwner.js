@@ -30,7 +30,7 @@ const styles = {
   },
 };
 
-const UpdateOwner = () => {
+const UpdateOwner = (props) => {
   const { ownerId } = useParams();
   const navigate = useNavigate();
   const [name, setName] = useState("");
