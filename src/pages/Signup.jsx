@@ -25,7 +25,7 @@ const Signup = (props) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `https://vast-hamlet-93254.herokuapp.com/api/users`,
+        `https://obscure-bayou-28121.herokuapp.com/api/users`,
         {
           method: "POST",
           headers: {
