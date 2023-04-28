@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import ProfileCard from "./ProfileCard";
 
 const styles = {
   question: {
@@ -39,7 +38,6 @@ const UpdateOwner = () => {
   const [ownerType, setOwnerType] = useState("");
   const [address, setAddress] = useState("");
   const [owner, setOwner] = useState(null);
-  const [isReloaded, setIsReloaded] = useState(false);
 
   useEffect(() => {
     fetch(`https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
@@ -245,7 +243,6 @@ const UpdateOwner = () => {
           Delete Owner
         </Button>
       </form>
-      {isReloaded && <ProfileCard />}
     </div>
   );
 };
