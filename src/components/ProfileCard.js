@@ -40,7 +40,7 @@ const titleCase = function (str) {
   return newArr.join(" ");
 };
 
-const ProfileCard = (props) => {
+const ProfileCard = () => {
   const { ownerId } = useParams();
 
   const [name, setName] = useState("");
