@@ -103,7 +103,7 @@ const OwnerLandHoldings = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}`)
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

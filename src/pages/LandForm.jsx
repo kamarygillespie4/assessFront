@@ -84,13 +84,16 @@ const LandForm = () => {
       sectionName,
       name,
     };
-    fetch(` ss/api/owners/${ownerId}/landHoldings`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

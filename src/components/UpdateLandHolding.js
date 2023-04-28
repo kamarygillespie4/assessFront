@@ -64,7 +64,9 @@ const UpdateLandHolding = (props) => {
   };
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`)
+    fetch(
+      ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+    )
       .then((response) => response.json())
       .then((landHolding) => {
         setNetAcres(landHolding.netAcres);
@@ -107,13 +109,16 @@ const UpdateLandHolding = (props) => {
       sectionName,
       name,
     };
-    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((response) => response.json())
       .then((landHolding) => {
         console.log(landHolding);

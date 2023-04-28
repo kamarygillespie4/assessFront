@@ -40,7 +40,7 @@ const UpdateOwner = () => {
   const [owner, setOwner] = useState(null);
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}`)
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setName(owner.name);
@@ -60,9 +60,12 @@ const UpdateOwner = () => {
         "Are you sure you want to delete this Owner? All associated Land Holdings will be deleted as well."
       )
     ) {
-      fetch(` /api/owners/${ownerId}`, {
-        method: "DELETE",
-      })
+      fetch(
+        ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -92,7 +95,7 @@ const UpdateOwner = () => {
       ownerType,
       address,
     };
-    fetch(` /api/owners/${ownerId}`, {
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

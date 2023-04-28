@@ -87,7 +87,7 @@ const AllOwners = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(` /api/owners`)
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners`)
       .then((response) => response.json())
       .then((data) => setOwners(data));
   }, []);

@@ -51,7 +51,7 @@ function AllHoldings() {
   const [landHoldings, setLandHoldings] = useState([]);
 
   useEffect(() => {
-    fetch(` /api/owners/landHoldings`)
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/landHoldings`)
       .then((res) => res.json())
       .then((data) => setLandHoldings(data))
       .catch((err) => console.log(err));

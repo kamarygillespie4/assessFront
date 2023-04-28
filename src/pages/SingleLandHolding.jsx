@@ -14,7 +14,9 @@ const SingleLandHolding = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`)
+    fetch(
+      ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+    )
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

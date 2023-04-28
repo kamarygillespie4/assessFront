@@ -61,7 +61,7 @@ const LandHoldingCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}`)
+    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -78,7 +78,9 @@ const LandHoldingCard = () => {
   }, [ownerId]);
 
   useEffect(() => {
-    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`)
+    fetch(
+      ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+    )
       .then((response) => response.json())
       .then((landHolding) => {
         setName(landHolding.name);
@@ -98,9 +100,12 @@ const LandHoldingCard = () => {
 
   const deleteLandHolding = () => {
     if (window.confirm("Are you sure you want to delete this landholding?")) {
-      fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`, {
-        method: "DELETE",
-      })
+      fetch(
+        ` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
