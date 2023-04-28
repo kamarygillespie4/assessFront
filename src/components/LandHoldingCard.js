@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button, Col, Row } from "react-bootstrap";
+require("dotenv").config();
 
 const styles = {
   label: {
@@ -61,7 +62,7 @@ const LandHoldingCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -78,7 +79,9 @@ const LandHoldingCard = () => {
   }, [ownerId]);
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}/landHoldings/${landHoldingId}`)
+    fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+    )
       .then((response) => response.json())
       .then((landHolding) => {
         setName(landHolding.name);
@@ -98,9 +101,12 @@ const LandHoldingCard = () => {
 
   const deleteLandHolding = () => {
     if (window.confirm("Are you sure you want to delete this landholding?")) {
-      fetch(`/api/owners/${ownerId}/landHoldings/${landHoldingId}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);

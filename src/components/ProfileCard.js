@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+require("dotenv").config();
 
 const styles = {
   label: {
@@ -50,7 +51,7 @@ const ProfileCard = (props) => {
   const [landHoldingCount, setLandHoldingCount] = useState(0);
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setName(owner.name);

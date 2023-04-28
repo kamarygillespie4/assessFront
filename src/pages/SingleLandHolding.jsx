@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+require("dotenv").config();
 
 import NavBar from "../components/NavBar";
 import UpdateLandHolding from "../components/UpdateLandHolding";
@@ -14,7 +15,9 @@ const SingleLandHolding = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}/landHoldings/${landHoldingId}`)
+    fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+    )
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

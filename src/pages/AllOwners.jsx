@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, CardGroup, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
+require("dotenv").config();
 
 const styles = {
   label: {
@@ -87,7 +88,7 @@ const AllOwners = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/api/owners")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners`)
       .then((response) => response.json())
       .then((data) => setOwners(data));
   }, []);

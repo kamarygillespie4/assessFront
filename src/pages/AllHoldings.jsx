@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./../components/NavBar";
 import { CardGroup, Card } from "react-bootstrap";
+require("dotenv").config();
 
 function titleCase(str) {
   if (!str) {
@@ -51,7 +52,7 @@ function AllHoldings() {
   const [landHoldings, setLandHoldings] = useState([]);
 
   useEffect(() => {
-    fetch("/api/owners/landHoldings")
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/landHoldings`)
       .then((res) => res.json())
       .then((data) => setLandHoldings(data))
       .catch((err) => console.log(err));

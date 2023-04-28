@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+require("dotenv").config();
 
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -40,7 +41,7 @@ const UpdateOwner = () => {
   const [owner, setOwner] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setName(owner.name);
@@ -60,7 +61,7 @@ const UpdateOwner = () => {
         "Are you sure you want to delete this Owner? All associated Land Holdings will be deleted as well."
       )
     ) {
-      fetch(`/api/owners/${ownerId}`, {
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`, {
         method: "DELETE",
       })
         .then((response) => {
@@ -92,7 +93,7 @@ const UpdateOwner = () => {
       ownerType,
       address,
     };
-    fetch(`/api/owners/${ownerId}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

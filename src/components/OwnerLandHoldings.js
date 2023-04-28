@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+require("dotenv").config();
+
 import { Card, Button, Col, Row } from "react-bootstrap";
 
 const styles = {
@@ -102,7 +104,7 @@ const OwnerLandHoldings = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`/api/owners/${ownerId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

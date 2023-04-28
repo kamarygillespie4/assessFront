@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
+require("dotenv").config();
 
 const styles = {
   question: {
@@ -84,13 +85,16 @@ const LandForm = () => {
       sectionName,
       name,
     };
-    fetch(`/api/owners/${ownerId}/landHoldings`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      `${process.env.REACT_APP_BACKEND_URL}ss/api/owners/${ownerId}/landHoldings`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
