@@ -65,7 +65,7 @@ const UpdateLandHolding = (props) => {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
     )
       .then((response) => response.json())
       .then((landHolding) => {
@@ -110,7 +110,7 @@ const UpdateLandHolding = (props) => {
       name,
     };
     fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
+      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
       {
         method: "PUT",
         headers: {

@@ -61,7 +61,7 @@ const LandHoldingCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
+    fetch(`${process.env.HEROKU_APP}/api/owners/${ownerId}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -79,7 +79,7 @@ const LandHoldingCard = () => {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
     )
       .then((response) => response.json())
       .then((landHolding) => {
@@ -101,7 +101,7 @@ const LandHoldingCard = () => {
   const deleteLandHolding = () => {
     if (window.confirm("Are you sure you want to delete this landholding?")) {
       fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
+        `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
         {
           method: "DELETE",
         }

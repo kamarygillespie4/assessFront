@@ -87,7 +87,7 @@ const AllOwners = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners`)
+    fetch(`${process.env.HEROKU_APP}/api/owners`)
       .then((response) => response.json())
       .then((data) => setOwners(data));
   }, []);

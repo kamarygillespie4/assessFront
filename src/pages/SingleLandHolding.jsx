@@ -15,7 +15,7 @@ const SingleLandHolding = () => {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
+      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
     )
       .then((response) => response.json())
       .then((owner) => {

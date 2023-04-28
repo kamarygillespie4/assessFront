@@ -58,7 +58,7 @@ const OwnerForm = () => {
       address,
     };
 
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners`, {
+    fetch(`${process.env.HEROKU_APP}/api/owners`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

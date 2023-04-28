@@ -103,7 +103,7 @@ const OwnerLandHoldings = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/${ownerId}`)
+    fetch(`${process.env.HEROKU_APP}/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

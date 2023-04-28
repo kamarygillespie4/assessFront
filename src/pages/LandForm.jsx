@@ -84,16 +84,13 @@ const LandForm = () => {
       sectionName,
       name,
     };
-    fetch(
-      `${process.env.REACT_APP_BACKEND_URL}ss/api/owners/${ownerId}/landHoldings`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    )
+    fetch(`${process.env.HEROKU_APP}ss/api/owners/${ownerId}/landHoldings`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

@@ -51,7 +51,7 @@ function AllHoldings() {
   const [landHoldings, setLandHoldings] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/owners/landHoldings`)
+    fetch(`${process.env.HEROKU_APP}/api/owners/landHoldings`)
       .then((res) => res.json())
       .then((data) => setLandHoldings(data))
       .catch((err) => console.log(err));
