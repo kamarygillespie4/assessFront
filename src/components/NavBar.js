@@ -19,6 +19,10 @@ const styles = {
     fontSize: "small",
     marginBottom: "2%",
   },
+  img: {
+    height: "3%",
+    width: "auto",
+  },
 };
 
 const NavBar = () => {
@@ -37,6 +41,7 @@ const NavBar = () => {
         <MDBContainer fluid>
           <span className="fs-4 fw-bold">
             <img
+              style={styles.img}
               alt="Phoenix Capital Group"
               src="https://phxcapitalgroup.com/wp-content/uploads/2023/03/March-2023-Update-Web-2-Tiny.png"
             />
