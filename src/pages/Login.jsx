@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${process.env.HEROKU_APP}/api/users/login`,
+        `https://obscure-bayou-28121.herokuapp.com/api/users/login`,
         {
           method: "POST",
           headers: {
