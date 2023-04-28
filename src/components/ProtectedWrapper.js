@@ -4,7 +4,7 @@ import { Outlet, Navigate } from "react-router-dom";
 const ProtectedWrapper = () => {
   const token = localStorage.getItem("authToken");
 
-  return token ? <Outlet /> : <div>User not logged in</div>;
+  return token ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default ProtectedWrapper;
