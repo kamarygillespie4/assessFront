@@ -84,7 +84,6 @@ const UpdateOwner = (props) => {
   }
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
     console.log(name);
     console.log(entityType);
     console.log(ownerType);
@@ -105,7 +104,7 @@ const UpdateOwner = (props) => {
       .then((response) => response.json())
       .then((owner) => {
         console.log(owner);
-        //navigate(`/protected/owners/${owner._id}`);
+        navigate(`/protected/owners/${owner._id}`);
       })
       .catch((error) => {
         console.error(error);
