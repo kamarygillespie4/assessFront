@@ -83,7 +83,8 @@ const UpdateOwner = (props) => {
     return <div>Loading...</div>;
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(name);
     console.log(entityType);
     console.log(ownerType);
