@@ -97,12 +97,11 @@ const LandForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        navigate(`/protected/owners/${ownerId}`);
       })
       .catch((error) => {
         console.error(error);
       });
-
-    navigate(`/protected/owners/${ownerId}`);
   };
 
   return (
