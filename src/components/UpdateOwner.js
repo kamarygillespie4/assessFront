@@ -234,15 +234,10 @@ const UpdateOwner = (props) => {
           />
         </div>
 
-        <Button onClick={handleSubmit} style={styles.button}>
+        <Button onClick={handleSubmit} type="submit" style={styles.button}>
           Update
         </Button>
-        <Button
-          type="submit"
-          style={styles.button}
-          variant="danger"
-          onClick={deleteOwner}
-        >
+        <Button style={styles.button} variant="danger" onClick={deleteOwner}>
           Delete Owner
         </Button>
       </form>
