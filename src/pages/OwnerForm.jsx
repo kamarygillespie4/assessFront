@@ -58,7 +58,7 @@ const OwnerForm = () => {
       address,
     };
 
-    fetch(` /api/owners`, {
+    fetch(`https://obscure-bayou-28121.herokuapp.com/api/owners`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
