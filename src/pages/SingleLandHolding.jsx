@@ -14,9 +14,7 @@ const SingleLandHolding = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(
-      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
-    )
+    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`)
       .then((response) => response.json())
       .then((owner) => {
         setOwner(owner);

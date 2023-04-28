@@ -58,7 +58,7 @@ const OwnerForm = () => {
       address,
     };
 
-    fetch(`${process.env.HEROKU_APP}/api/owners`, {
+    fetch(` /api/owners`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

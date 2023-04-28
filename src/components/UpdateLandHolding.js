@@ -64,9 +64,7 @@ const UpdateLandHolding = (props) => {
   };
 
   useEffect(() => {
-    fetch(
-      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`
-    )
+    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`)
       .then((response) => response.json())
       .then((landHolding) => {
         setNetAcres(landHolding.netAcres);
@@ -109,16 +107,13 @@ const UpdateLandHolding = (props) => {
       sectionName,
       name,
     };
-    fetch(
-      `${process.env.HEROKU_APP}/api/owners/${ownerId}/landHoldings/${landHoldingId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    )
+    fetch(` /api/owners/${ownerId}/landHoldings/${landHoldingId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
       .then((response) => response.json())
       .then((landHolding) => {
         console.log(landHolding);

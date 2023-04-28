@@ -84,7 +84,7 @@ const LandForm = () => {
       sectionName,
       name,
     };
-    fetch(`${process.env.HEROKU_APP}ss/api/owners/${ownerId}/landHoldings`, {
+    fetch(` ss/api/owners/${ownerId}/landHoldings`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
