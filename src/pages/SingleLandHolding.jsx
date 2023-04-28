@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-require("dotenv").config();
 
 import NavBar from "../components/NavBar";
 import UpdateLandHolding from "../components/UpdateLandHolding";

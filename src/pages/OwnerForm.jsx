@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import NavBar from "../components/NavBar";
-require("dotenv").config();
 
 const styles = {
   question: {

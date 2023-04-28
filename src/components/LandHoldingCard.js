@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button, Col, Row } from "react-bootstrap";
-require("dotenv").config();
 
 const styles = {
   label: {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./../components/NavBar";
 import { CardGroup, Card } from "react-bootstrap";
-require("dotenv").config();
 
 function titleCase(str) {
   if (!str) {

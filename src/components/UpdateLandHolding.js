@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-require("dotenv").config();
 
 import { Button, Col, Row } from "react-bootstrap";
 
