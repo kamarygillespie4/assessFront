@@ -27,6 +27,7 @@ const Signup = (props) => {
       const response = await fetch(
         `https://vast-hamlet-93254.herokuapp.com/api/users`,
         {
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
