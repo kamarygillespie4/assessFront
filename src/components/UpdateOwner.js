@@ -40,7 +40,7 @@ const UpdateOwner = () => {
   const [owner, setOwner] = useState(null);
 
   useEffect(() => {
-    fetch(` https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
+    fetch(`https://obscure-bayou-28121.herokuapp.com/api/owners/${ownerId}`)
       .then((response) => response.json())
       .then((owner) => {
         setName(owner.name);

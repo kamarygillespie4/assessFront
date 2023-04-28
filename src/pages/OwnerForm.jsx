@@ -45,7 +45,7 @@ const OwnerForm = () => {
   const [address, setAddress] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     console.log(name);
     console.log(entityType);
     console.log(ownerType);

@@ -67,7 +67,7 @@ const LandForm = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    //e.preventDefault();
     const errors = validateInput();
     if (errors.length > 0) {
       alert(`Invalid input: ${errors.join("\n")}`);
