@@ -28,6 +28,8 @@ const Login = () => {
       const response = await fetch(
         `https://obscure-bayou-28121.herokuapp.com/api/users/login`,
         {
+          mode: "no-cors",
+
           method: "POST",
           headers: {
             "Content-Type": "application/json",
