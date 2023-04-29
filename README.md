@@ -28,6 +28,4 @@ This project is a full-stack single-page application built with the MERN stack (
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Wireframe
 
-![wire frame](wireframe.jpg)
